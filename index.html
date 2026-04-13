@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>合同会社 田中真幸事務所</title>
+  <meta name="description" content="事務処理の受託・業務代行・業務改善のご相談を承る、合同会社 田中真幸事務所の公式サイトです。" />
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --paper: #fffdf9;
+      --text: #2f2a24;
+      --muted: #6b6257;
+      --line: #ddd4c7;
+      --accent: #8b5e3c;
+      --accent-soft: #f1e4d6;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.8;
+    }
+    a { color: inherit; }
+    .container { width: min(1080px, calc(100% - 32px)); margin: 0 auto; }
+
+    header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(255, 253, 249, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding: 14px 0;
+    }
+    .site-title { font-size: 1rem; font-weight: 700; text-decoration: none; }
+    nav { display: flex; flex-wrap: wrap; gap: 14px; }
+    nav a { text-decoration: none; color: var(--muted); font-size: 0.95rem; }
+    nav a:hover { color: var(--accent); }
+
+    .hero { padding: 72px 0 48px; }
+    .hero-box {
+      background: linear-gradient(180deg, #fffdf9 0%, #fbf5ed 100%);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 48px 32px;
+    }
+
+    .eyebrow {
+      display: inline-block; margin-bottom: 14px;
+      padding: 6px 12px; border-radius: 999px;
+      background: var(--accent-soft); color: var(--accent);
+      font-size: 0.9rem; font-weight: 700;
+    }
+
+    h1 { font-size: clamp(2rem, 4.8vw, 3.4rem); margin-bottom: 16px; }
+    h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 14px; }
+    h3 { font-size: 1.15rem; margin-bottom: 10px; }
+
+    p { margin: 0 0 16px; }
+    .lead { font-size: 1.06rem; color: var(--muted); }
+
+    .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .button {
+      display: inline-block; padding: 12px 18px;
+      border-radius: 999px; text-decoration: none;
+      border: 1px solid var(--line); background: #fff; font-weight: 700;
+    }
+    .button.primary {
+      background: var(--accent); border-color: var(--accent); color: #fff;
+    }
+
+    section { padding: 28px 0 40px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 22px;
+    }
+
+    .flow { display: grid; gap: 14px; }
+    .flow-item {
+      display: grid; grid-template-columns: 56px 1fr;
+      gap: 14px; padding: 18px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+    .flow-number {
+      width: 56px; height: 56px; border-radius: 50%;
+      display: grid; place-items: center;
+      background: var(--accent-soft);
+      color: var(--accent); font-weight: 800;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 24px 0 40px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="#" class="site-title">合同会社 田中真幸事務所</a>
+    <nav>
+      <a href="#service">業務内容</a>
+      <a href="#company">事務所概要</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-box">
+      <div class="eyebrow">事務処理の受託・業務改善</div>
+      <h1>事務を整えて、仕事に集中できる環境をつくります。</h1>
+      <p class="lead">
+        日々の事務作業を引き受け、業務の流れを整理し、無理なく続けられる形に整えます。
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="service">
+  <div class="container">
+    <h2>業務内容</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>事務代行</h3>
+        <p>日々の事務作業を代行します。</p>
+      </div>
+      <div class="card">
+        <h3>バックオフィス支援</h3>
+        <p>経理・総務・人事の業務を整理します。</p>
+      </div>
+      <div class="card">
+        <h3>業務改善</h3>
+        <p>無駄を減らし、効率的な流れを作ります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="company">
+  <div class="container">
+    <h2>事務所概要</h2>
+    <div class="grid-2">
+      <div class="card">
+        <p><strong>名称：</strong>合同会社 田中真幸事務所</p>
+        <p><strong>代表者：</strong>田中 真幸</p>
+        <p><strong>連絡先：</strong>masayuki@masayukitanaka.me</p>
+      </div>
+      <div class="card">
+        <p>
+          事務処理の受託、業務代行、業務改善を通じて、
+          事業に集中できる環境づくりを支援します。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2>お問い合わせ</h2>
+    <div class="card">
+      <p>お気軽にご相談ください。</p>
+      <div class="buttons">
+        <a class="button primary" href="mailto:masayuki@masayukitanaka.me">メールで問い合わせ</a>
+        <a class="button" href="https://forms.google.com/your-form-url" target="_blank">Googleフォームで問い合わせ</a>
+      </div>
+      <p style="margin-top:12px; font-size:0.9rem; color:#666;">
+        ※ GoogleフォームのURLは実際のリンクに置き換えてください
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 合同会社 田中真幸事務所</p>
+  </div>
+</footer>
+
+</body>
+</html>
