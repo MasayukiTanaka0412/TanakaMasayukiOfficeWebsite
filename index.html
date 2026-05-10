@@ -4,16 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>合同会社 田中真幸事務所</title>
-  <meta name="description" content="事務処理の受託・業務代行・業務改善のご相談を承る、合同会社 田中真幸事務所の公式サイトです。" />
+  <meta name="description" content="小さな会社やお店の事務作業を軽くし、本業に集中できる環境づくりを支援する、合同会社 田中真幸事務所の公式サイトです。" />
   <style>
     :root {
-      --bg: #f7f4ee;
-      --paper: #fffdf9;
-      --text: #2f2a24;
-      --muted: #6b6257;
-      --line: #ddd4c7;
-      --accent: #8b5e3c;
-      --accent-soft: #f1e4d6;
+      --bg: #f5f1e8;
+      --paper: #fffdf8;
+      --text: #302821;
+      --muted: #6a5f53;
+      --line: #dfd3c2;
+      --accent: #85573a;
+      --accent-soft: #f1e2d0;
+      --accent-deep: #503523;
+      --highlight: #f8efe4;
     }
 
     * { box-sizing: border-box; }
@@ -22,7 +24,9 @@
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
       color: var(--text);
-      background: var(--bg);
+      background:
+        radial-gradient(circle at top right, rgba(241, 226, 208, 0.85), transparent 28%),
+        linear-gradient(180deg, #f9f5ee 0%, var(--bg) 18%, #efe7da 100%);
       line-height: 1.8;
     }
     a { color: inherit; }
@@ -43,12 +47,14 @@
     nav a { text-decoration: none; color: var(--muted); font-size: 0.95rem; }
     nav a:hover { color: var(--accent); }
 
-    .hero { padding: 72px 0 48px; }
+    .hero { padding: 72px 0 40px; }
     .hero-box {
-      background: linear-gradient(180deg, #fffdf9 0%, #fbf5ed 100%);
+      background:
+        linear-gradient(135deg, rgba(255, 253, 248, 0.98) 0%, rgba(248, 239, 228, 0.96) 100%);
       border: 1px solid var(--line);
-      border-radius: 24px;
-      padding: 48px 32px;
+      border-radius: 28px;
+      padding: 48px 32px 36px;
+      box-shadow: 0 24px 80px rgba(80, 53, 35, 0.08);
     }
 
     .eyebrow {
@@ -64,18 +70,64 @@
 
     p { margin: 0 0 16px; }
     .lead { font-size: 1.06rem; color: var(--muted); }
+    .hero-lead {
+      max-width: 760px;
+      font-size: 1.08rem;
+    }
 
     .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
     .button {
       display: inline-block; padding: 12px 18px;
       border-radius: 999px; text-decoration: none;
       border: 1px solid var(--line); background: #fff; font-weight: 700;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+    .button:hover {
+      transform: translateY(-1px);
+      border-color: var(--accent);
     }
     .button.primary {
       background: var(--accent); border-color: var(--accent); color: #fff;
     }
+    .button.secondary {
+      background: transparent;
+      color: var(--accent-deep);
+    }
+
+    .hero-points {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .hero-point {
+      padding: 16px 18px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(133, 87, 58, 0.14);
+      border-radius: 18px;
+    }
+
+    .hero-point strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--accent-deep);
+    }
 
     section { padding: 28px 0 40px; }
+    .section-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+    .section-title p {
+      max-width: 620px;
+      color: var(--muted);
+    }
+
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 
@@ -84,6 +136,54 @@
       border: 1px solid var(--line);
       border-radius: 20px;
       padding: 22px;
+      box-shadow: 0 10px 32px rgba(80, 53, 35, 0.04);
+    }
+
+    .soft-card {
+      background: var(--highlight);
+    }
+
+    .card ul,
+    .price-list,
+    .check-list {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    .card li,
+    .check-list li,
+    .price-list li {
+      margin-bottom: 8px;
+    }
+
+    .problem-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px 24px;
+      padding-left: 1.2rem;
+      margin: 0 0 18px;
+    }
+
+    .service-card h3,
+    .feature-card h3,
+    .price-card h3 {
+      color: var(--accent-deep);
+    }
+
+    .note {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--accent);
+      background: rgba(255, 255, 255, 0.68);
+      border-radius: 14px;
+      color: var(--muted);
+    }
+
+    .price-card strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+      color: var(--accent-deep);
     }
 
     .flow { display: grid; gap: 14px; }
@@ -101,6 +201,24 @@
       color: var(--accent); font-weight: 800;
     }
 
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .contact-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .small {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
     footer {
       border-top: 1px solid var(--line);
       padding: 24px 0 40px;
@@ -109,7 +227,33 @@
     }
 
     @media (max-width: 900px) {
-      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .hero-points,
+      .grid-4,
+      .grid-3,
+      .grid-2,
+      .problem-list,
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        display: block;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-box {
+        padding: 38px 22px 28px;
+      }
+
+      .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        gap: 10px 14px;
+      }
     }
   </style>
 </head>
@@ -119,8 +263,10 @@
   <div class="container header-inner">
     <a href="#" class="site-title">合同会社 田中真幸事務所</a>
     <nav>
-      <a href="#service">業務内容</a>
-      <a href="#company">事務所概要</a>
+      <a href="#problems">お悩み</a>
+      <a href="#services">サービス</a>
+      <a href="#pricing">料金</a>
+      <a href="#profile">代表者紹介</a>
       <a href="#contact">お問い合わせ</a>
     </nav>
   </div>
@@ -131,49 +277,281 @@
 <section class="hero">
   <div class="container">
     <div class="hero-box">
-      <div class="eyebrow">事務処理の受託・業務改善</div>
-      <h1>事務を整えて、仕事に集中できる環境をつくります。</h1>
-      <p class="lead">
-        日々の事務作業を引き受け、業務の流れを整理し、無理なく続けられる形に整えます。
+      <div class="eyebrow">小さな会社・お店の事務作業を軽くする事務所</div>
+      <h1>社長の“ちょっと面倒”な事務作業を、まとめて軽くします。</h1>
+      <p class="lead hero-lead">
+        合同会社 田中真幸事務所は、個人商店・家族経営・小規模事業者向けに、日々の事務作業、データ整理、資料作成、業務改善を支援する事務所です。ITとAIを活用しながら、無理なく、わかりやすく、現場に合った形で業務を整えます。
       </p>
+      <div class="buttons">
+        <a class="button primary" href="#contact">無料相談を申し込む</a>
+        <a class="button secondary" href="#services">サービス内容を見る</a>
+        <a class="button" href="#contact">まずは相談してみる</a>
+      </div>
+      <div class="hero-points">
+        <div class="hero-point">
+          <strong>事務作業を軽くする</strong>
+          <span>見積書、請求書、売上データ、資料整理などの日々の負担を減らします。</span>
+        </div>
+        <div class="hero-point">
+          <strong>本業に集中しやすくする</strong>
+          <span>営業、接客、現場対応、商品づくりに使える時間を増やします。</span>
+        </div>
+        <div class="hero-point">
+          <strong>ITやAIは裏側で使う</strong>
+          <span>難しい操作をお客様に求めず、実際の成果物や改善としてお渡しします。</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="service">
+<section id="problems">
   <div class="container">
-    <h2>業務内容</h2>
-    <div class="grid-3">
-      <div class="card">
-        <h3>事務代行</h3>
-        <p>日々の事務作業を代行します。</p>
+    <div class="section-title">
+      <div>
+        <h2>こんなお悩みはありませんか？</h2>
+        <p>「これ、うちのことだ」と思ってもらえる状態から始めるために、よくある負担を整理しました。</p>
       </div>
-      <div class="card">
-        <h3>バックオフィス支援</h3>
-        <p>経理・総務・人事の業務を整理します。</p>
+    </div>
+    <div class="card soft-card">
+      <ul class="problem-list">
+        <li>見積書、請求書、領収書、売上データの整理に時間がかかっている</li>
+        <li>Excelや紙の管理が増えて、どこに何があるかわからない</li>
+        <li>問い合わせ対応や顧客管理が手作業になっている</li>
+        <li>本当は営業や現場に集中したいのに、事務作業に時間を取られている</li>
+        <li>ITやAIに興味はあるけれど、何から始めればよいかわからない</li>
+        <li>システム会社に頼むほどではないが、今のやり方を少し楽にしたい</li>
+      </ul>
+      <p>小さな会社やお店では、事務作業を専門に見る人がいないことも多く、その結果、社長・店主・家族の誰かが見えない負担を抱えがちです。当事務所は、そうした日々の“ちょっと大変”を一緒に整理します。</p>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-title">
+      <div>
+        <h2>提供サービス</h2>
+        <p>単なる作業代行だけでなく、継続的に作業を軽くするための整理・改善もあわせて行います。</p>
       </div>
-      <div class="card">
-        <h3>業務改善</h3>
-        <p>無駄を減らし、効率的な流れを作ります。</p>
+    </div>
+    <div class="grid-2">
+      <div class="card service-card">
+        <h3>事務作業の代行・整理</h3>
+        <p>日々発生する事務作業を、必要な範囲でお手伝いします。</p>
+        <ul class="check-list">
+          <li>データ入力・データ整理</li>
+          <li>Excel・スプレッドシートの整備</li>
+          <li>請求・売上・顧客情報の一覧化</li>
+          <li>PDF・紙資料の内容整理</li>
+          <li>定型レポート作成</li>
+          <li>問い合わせ内容や作業履歴の整理</li>
+        </ul>
+        <p>「毎月少しずつ発生するけれど、誰かに任せたい」そんな作業を、無理のない形でお預かりします。</p>
+      </div>
+      <div class="card service-card">
+        <h3>業務の見える化・効率化</h3>
+        <p>今の業務の流れを整理し、ムダや重複を見つけます。いきなり大きなシステムを導入するのではなく、まずは現場で使いやすい形に整えることを大切にしています。</p>
+        <ul class="check-list">
+          <li>現在の作業手順の整理</li>
+          <li>Excel・Googleスプレッドシートの改善</li>
+          <li>手作業の削減</li>
+          <li>管理表・チェックリストの作成</li>
+          <li>業務フローの見直し</li>
+          <li>小さな自動化の導入</li>
+        </ul>
+        <p>「どこから手をつければいいかわからない」という状態でも大丈夫です。まずはお話を伺いながら、負担の大きい作業から順番に整理します。</p>
+      </div>
+      <div class="card service-card">
+        <h3>AI・ITを活用した業務支援</h3>
+        <p>AIやITツールを使って、資料作成、文章作成、情報整理、作業の自動化を支援します。ただし、難しいツールを無理に導入することはしません。</p>
+        <ul class="check-list">
+          <li>文章作成・文面整理</li>
+          <li>議事録・メモの整理</li>
+          <li>データ分類・要約</li>
+          <li>顧客リストや営業リストの作成支援</li>
+          <li>業務マニュアル作成</li>
+          <li>簡易ツール・自動化スクリプトの作成</li>
+        </ul>
+        <p>AIを「導入すること」が目的ではなく、作業時間を減らし、判断しやすい状態を作ることを目的にしています。</p>
+      </div>
+      <div class="card service-card">
+        <h3>小規模事業者向け相談</h3>
+        <p>「これは頼めるのかな？」という段階からご相談いただけます。最初から大きな契約を前提にする必要はありません。</p>
+        <ul class="check-list">
+          <li>事務作業を外注できるか相談したい</li>
+          <li>自社に合うITツールを知りたい</li>
+          <li>今のExcel管理を改善したい</li>
+          <li>AIで何ができるのか知りたい</li>
+          <li>営業や集客の作業を整理したい</li>
+          <li>起業・小規模事業のバックオフィスを整えたい</li>
+        </ul>
+        <p>まずは、困っている作業を一緒に棚卸しするところから始められます。</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="company">
+<section id="features">
   <div class="container">
-    <h2>事務所概要</h2>
+    <div class="section-title">
+      <div>
+        <h2>当事務所の特徴</h2>
+        <p>専門用語よりも、相手目線で「相談しやすい」「無理なく始められる」を伝える構成にしています。</p>
+      </div>
+    </div>
+    <div class="grid-4">
+      <div class="card feature-card">
+        <h3>業務とITの両方を見て整理します</h3>
+        <p>単に作業を代行するだけでなく、「なぜその作業が大変になっているのか」「どこを少し変えると楽になるのか」まで一緒に考えます。</p>
+      </div>
+      <div class="card feature-card">
+        <h3>小さく始められます</h3>
+        <p>大きなシステム導入や高額なコンサルティングではなく、まずは身近な事務作業やExcel整理から始められます。</p>
+      </div>
+      <div class="card feature-card">
+        <h3>AIを裏側で活用します</h3>
+        <p>お客様に難しいAIツールを覚えていただく必要はありません。当事務所側でAIやITを活用し、実際の作業負担を減らします。</p>
+      </div>
+      <div class="card feature-card">
+        <h3>経営者の時間を作ります</h3>
+        <p>事務作業に追われる時間を減らし、営業、接客、商品づくり、現場対応など、本来集中したい仕事に使える時間を増やします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="customers">
+  <div class="container">
+    <div class="section-title">
+      <div>
+        <h2>対象となるお客様</h2>
+        <p>主に、IT担当者は置けないけれど、事務作業を少し楽にしたい事業者様を想定しています。</p>
+      </div>
+    </div>
     <div class="grid-2">
       <div class="card">
-        <p><strong>名称：</strong>合同会社 田中真幸事務所</p>
-        <p><strong>代表者：</strong>田中 真幸</p>
-        <p><strong>連絡先：</strong>masayuki@masayukitanaka.me</p>
+        <ul class="check-list">
+          <li>個人商店</li>
+          <li>家族経営の会社・店舗</li>
+          <li>従業員20名以下の小規模事業者</li>
+          <li>中小製造業</li>
+          <li>建設業</li>
+          <li>飲食業</li>
+          <li>士業事務所</li>
+          <li>地域密着型のサービス業</li>
+        </ul>
       </div>
+      <div class="card soft-card">
+        <p>特に、「IT担当者はいないけれど、事務作業を少し楽にしたい」「AIやDXという言葉は気になるけれど、何をすればよいかわからない」という事業者様に向いています。</p>
+        <p class="note">難しいITの導入そのものではなく、毎月の面倒な作業を整理して、本業に集中できる状態を作ることを重視しています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="container">
+    <div class="section-title">
+      <div>
+        <h2>料金の目安</h2>
+        <p>詳細は内容や作業量に応じて個別にお見積りします。最初は小さな作業からご相談いただけます。</p>
+      </div>
+    </div>
+    <div class="grid-4">
+      <div class="card price-card">
+        <h3>初回相談</h3>
+        <strong>無料</strong>
+        <p>現在のお困りごとを伺い、対応できる内容を整理します。</p>
+      </div>
+      <div class="card price-card">
+        <h3>スポット支援</h3>
+        <strong>30,000円〜</strong>
+        <p>データ整理、資料作成、業務改善相談など、単発のご依頼に対応します。</p>
+      </div>
+      <div class="card price-card">
+        <h3>月額支援</h3>
+        <strong>50,000円〜</strong>
+        <p>毎月発生する事務作業、定型レポート作成、継続的な業務整理などを支援します。</p>
+      </div>
+      <div class="card price-card">
+        <h3>業務改善・自動化支援</h3>
+        <strong>100,000円〜</strong>
+        <p>現在の業務フローを整理し、Excel改善、簡易自動化、AI活用を含めて支援します。</p>
+      </div>
+    </div>
+    <p class="small" style="margin-top: 14px;">※ 金額は目安です。内容・作業量・納期により変動します。</p>
+  </div>
+</section>
+
+<section id="flow">
+  <div class="container">
+    <div class="section-title">
+      <div>
+        <h2>ご相談の流れ</h2>
+        <p>まずは困っていることを共有いただければ十分です。依頼内容が固まっていなくても問題ありません。</p>
+      </div>
+    </div>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-number">1</div>
+        <div>
+          <h3>お問い合わせ</h3>
+          <p>お問い合わせフォームより、現在のお困りごとをお送りください。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-number">2</div>
+        <div>
+          <h3>初回ヒアリング</h3>
+          <p>オンラインまたはメールで、業務内容や課題を確認します。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-number">3</div>
+        <div>
+          <h3>対応内容のご提案</h3>
+          <p>作業範囲、進め方、料金の目安をご提案します。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-number">4</div>
+        <div>
+          <h3>ご契約・作業開始</h3>
+          <p>内容にご納得いただいたうえで、作業を開始します。</p>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-number">5</div>
+        <div>
+          <h3>納品・継続支援</h3>
+          <p>成果物の納品、改善内容の共有、必要に応じた継続支援を行います。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="profile">
+  <div class="container">
+    <div class="section-title">
+      <div>
+        <h2>代表者紹介</h2>
+        <p>技術の話を前面に出すより、現場で使いやすい形に落とし込む視点を中心に伝えます。</p>
+      </div>
+    </div>
+    <div class="grid-2">
       <div class="card">
-        <p>
-          事務処理の受託、業務代行、業務改善を通じて、
-          事業に集中できる環境づくりを支援します。
-        </p>
+        <p><strong>田中 真幸</strong></p>
+        <p>ソフトウェアエンジニアとして、業務システムの設計・開発・改善に長年携わってきました。システム開発だけでなく、業務の流れを整理し、現場で使いやすい形に落とし込むことを得意としています。</p>
+        <p>近年は、AIや自動化ツールを活用し、事務作業・情報整理・業務改善の効率化に取り組んでいます。</p>
+      </div>
+      <div class="card soft-card">
+        <p>小さな会社やお店にとって、本当に必要なのは「難しいIT」ではなく、日々の作業が少し軽くなり、本業に集中できる状態だと考えています。</p>
+        <p>合同会社 田中真幸事務所では、ITとAIを裏側で活用しながら、事業者様の身近な業務を支えるサービスを提供していきます。</p>
+        <p><strong>名称：</strong>合同会社 田中真幸事務所<br />
+        <strong>代表者：</strong>田中 真幸<br />
+        <strong>連絡先：</strong><a href="mailto:masayuki@masayukitanaka.me">masayuki@masayukitanaka.me</a></p>
       </div>
     </div>
   </div>
@@ -182,15 +560,26 @@
 <section id="contact">
   <div class="container">
     <h2>お問い合わせ</h2>
-    <div class="card">
-      <p>お気軽にご相談ください。</p>
-      <div class="buttons">
-        <a class="button primary" href="mailto:masayuki@masayukitanaka.me">メールで問い合わせ</a>
-        <a class="button" href="https://forms.google.com/your-form-url" target="_blank">Googleフォームで問い合わせ</a>
+    <div class="contact-box">
+      <div class="card contact-panel">
+        <div>
+          <p>事務作業の代行、業務整理、AI・IT活用について、まずはお気軽にご相談ください。</p>
+          <p>「まだ依頼内容がはっきりしていない」「何を頼めるのかわからない」という段階でも大丈夫です。現在のお困りごとを伺い、できることを一緒に整理します。</p>
+        </div>
+        <div class="buttons">
+          <a class="button" href="https://forms.gle/3hiRXUoJwS9hqQXD9" target="_blank" rel="noreferrer">お問い合わせフォームはこちら</a>
+        </div>
       </div>
-      <p style="margin-top:12px; font-size:0.9rem; color:#666;">
-        ※ GoogleフォームのURLは実際のリンクに置き換えてください
-      </p>
+      <div class="card soft-card">
+        <h3>相談しやすい内容の例</h3>
+        <ul class="check-list">
+          <li>毎月の請求や売上集計を楽にしたい</li>
+          <li>Excelや紙の管理を見直したい</li>
+          <li>事務作業を一部外注できるか確認したい</li>
+          <li>AIで何ができるか整理したい</li>
+        </ul>
+        <p class="small">※ GoogleフォームのURLは実際のリンクに置き換えてください。</p>
+      </div>
     </div>
   </div>
 </section>
