@@ -222,6 +222,42 @@
       gap: 14px;
     }
 
+    .book-card {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .book-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .book-meta span {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-deep);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .book-highlight {
+      padding: 20px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(248, 239, 228, 0.88), rgba(255, 253, 248, 0.96));
+      border: 1px solid var(--line);
+    }
+
+    .book-highlight p:last-child {
+      margin-bottom: 0;
+    }
+
     .video-frame {
       position: relative;
       overflow: hidden;
@@ -289,7 +325,8 @@
       .grid-3,
       .grid-2,
       .problem-list,
-      .contact-box {
+      .contact-box,
+      .book-card {
         grid-template-columns: 1fr;
       }
 
@@ -323,6 +360,7 @@
       <a href="#problems">お悩み</a>
       <a href="#services">サービス</a>
       <a href="#videos">紹介動画</a>
+      <a href="#books">著書紹介</a>
       <a href="#pricing">料金</a>
       <a href="#profile">代表者紹介</a>
       <a href="#contact">お問い合わせ</a>
@@ -417,6 +455,32 @@
             allowfullscreen></iframe>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="books">
+  <div class="container">
+    <div class="section-title">
+      <div>
+        <h2>著書紹介</h2>
+        <p>AIを活用しながら会社を立ち上げ、仕組みを整えていく実践の記録をまとめた一冊です。</p>
+      </div>
+    </div>
+    <div class="card book-card">
+      <div>
+        <div class="book-meta">
+          <span>Kindle版</span>
+          <span>2026年5月30日発売</span>
+        </div>
+        <h3>AIと一緒に会社を作ってみた</h3>
+        <p>25年以上IT業界で現場と事業づくりに関わってきた経験をもとに、AIを「魔法の道具」ではなく、仕事を整理し前に進めるための相棒として使いながら、小さな会社を形にしていく過程をまとめています。</p>
+        <p>これから事業を始める方、バックオフィスや業務の整え方を考えている方、AIを実務にどう生かせるか知りたい方におすすめです。</p>
+        <div class="buttons">
+          <a class="button primary" href="https://www.amazon.co.jp/dp/B0H3FJFTLS" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+        </div>
+      </div>
+      
     </div>
   </div>
 </section>
