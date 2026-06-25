@@ -61,15 +61,15 @@
   </script>
   <style>
     :root {
-      --bg: #f5f1e8;
-      --paper: #fffdf8;
-      --text: #302821;
-      --muted: #6a5f53;
-      --line: #dfd3c2;
-      --accent: #85573a;
-      --accent-soft: #f1e2d0;
-      --accent-deep: #503523;
-      --highlight: #f8efe4;
+      --bg: #f8f4ec;
+      --paper: #fffdfa;
+      --text: #263630;
+      --muted: #5c6c63;
+      --line: #d5e8dc;
+      --accent: #07c255;
+      --accent-soft: rgba(7, 194, 85, 0.12);
+      --accent-deep: #057c39;
+      --highlight: #f3fbf5;
     }
 
     * { box-sizing: border-box; }
@@ -79,8 +79,9 @@
       font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top right, rgba(241, 226, 208, 0.85), transparent 28%),
-        linear-gradient(180deg, #f9f5ee 0%, var(--bg) 18%, #efe7da 100%);
+        radial-gradient(circle at top left, rgba(7, 194, 85, 0.10), transparent 32rem),
+        radial-gradient(circle at bottom right, rgba(7, 194, 85, 0.08), transparent 28rem),
+        var(--bg);
       line-height: 1.8;
     }
     a { color: inherit; }
@@ -88,7 +89,7 @@
 
     header {
       position: sticky; top: 0; z-index: 20;
-      background: rgba(255, 253, 249, 0.92);
+      background: rgba(255, 253, 250, 0.92);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--line);
     }
@@ -104,11 +105,11 @@
     .hero { padding: 72px 0 40px; }
     .hero-box {
       background:
-        linear-gradient(135deg, rgba(255, 253, 248, 0.98) 0%, rgba(248, 239, 228, 0.96) 100%);
+        linear-gradient(135deg, rgba(255, 253, 250, 0.98) 0%, rgba(243, 251, 245, 0.96) 100%);
       border: 1px solid var(--line);
       border-radius: 28px;
       padding: 48px 32px 36px;
-      box-shadow: 0 24px 80px rgba(80, 53, 35, 0.08);
+      box-shadow: 0 24px 80px rgba(38, 54, 48, 0.10);
     }
 
     .eyebrow {
@@ -133,7 +134,7 @@
     .button {
       display: inline-block; padding: 12px 18px;
       border-radius: 999px; text-decoration: none;
-      border: 1px solid var(--line); background: #fff; font-weight: 700;
+      border: 1px solid var(--accent); background: #fff; font-weight: 700;
       transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
     }
     .button:hover {
@@ -158,7 +159,7 @@
     .hero-point {
       padding: 16px 18px;
       background: rgba(255, 255, 255, 0.72);
-      border: 1px solid rgba(133, 87, 58, 0.14);
+      border: 1px solid rgba(7, 194, 85, 0.16);
       border-radius: 18px;
     }
 
@@ -228,7 +229,7 @@
       margin-top: 18px;
       padding: 16px 18px;
       border-left: 4px solid var(--accent);
-      background: rgba(255, 255, 255, 0.68);
+      background: rgba(255, 255, 255, 0.72);
       border-radius: 14px;
       color: var(--muted);
     }
@@ -247,8 +248,11 @@
       background: var(--paper);
       border: 1px solid var(--line);
       border-radius: 18px;
+      box-shadow: 0 10px 32px rgba(38, 54, 48, 0.06);
     }
+
     .flow-number {
+      box-shadow: 0 10px 32px rgba(38, 54, 48, 0.06);
       width: 56px; height: 56px; border-radius: 50%;
       display: grid; place-items: center;
       background: var(--accent-soft);
